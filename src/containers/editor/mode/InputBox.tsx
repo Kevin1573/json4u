@@ -16,7 +16,7 @@ interface InputBoxProps extends ComponentPropsWithoutRef<typeof Input> {
 const InputBox = forwardRef<ElementRef<typeof Input>, InputBoxProps>(({ className, ...props }, ref) => {
   const t = useTranslations();
   const setCommandMode = useStatusStore((state) => state.setCommandMode);
-  const onChange = useDebounceFn(async (ev) => props.run(ev.target.value), 1000, [props.run]);
+  const onChange = useDebounceFn(async (ev) => props.run(ev.target.value), 10000, [props.run]);
   const [loading, setLoading] = useState(!!props.initial);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const InputBox = forwardRef<ElementRef<typeof Input>, InputBoxProps>(({ classNam
         disabled={loading}
         placeholder={props.placeholderFn ? props.placeholderFn(loading) : props.placeholder}
         ref={ref}
-        onChange={onChange}
+        // onChange={onChange}
         onKeyDown={(ev) => {
           if (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) {
             return;

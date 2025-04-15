@@ -84,6 +84,19 @@ const Toolbar = memo(({ id }: ToolbarProps) => {
           {fold ? <SquareMinus className="icon" /> : <SquarePlus className="icon" />}
         </ToolbarButton>
       )}
+      {
+        <ToolbarButton
+          title={"copy"}
+          onClick={async () => {
+            // toggleFoldNode(id);
+            const { nodes, edges } = await window.worker.toggleGraphNodeHidden(id, undefined, fold);
+            console.log(nodes[0].data, edges);
+          }}
+        >
+          <strong><pre>{"cp"}</pre></strong>
+        </ToolbarButton>
+      }
+      {id}
     </NodeToolbar>
   );
 });

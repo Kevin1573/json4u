@@ -25,6 +25,8 @@ export const ObjectNode = memo(({ id, data }: NodeProps<NodeWithData>) => {
   const childrenNum = getChildrenKeys(node).length;
   const { kvStart, kvEnd, virtualHandleIndices } = flowNode.data.render;
 
+  console.log("tree", tree);
+
   return (
     <>
       {data.toolbarVisible && <Toolbar id={id} />}

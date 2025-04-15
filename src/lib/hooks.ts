@@ -1,7 +1,7 @@
 import { type DependencyList, useMemo } from "react";
 import { debounce } from "lodash-es";
 
-export function useDebounceFn<T extends (...args: any) => any>(
+export function useDebounceFn<T extends(...args: any) => any>(
   fn: T,
   wait: number,
   deps: DependencyList,

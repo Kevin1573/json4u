@@ -86,6 +86,7 @@ export function useRevealNode() {
   }, [editor, revealPosition, isNeedReveal]);
 }
 
+// todo set last input json from localStorage
 const exampleData = `{
   "Aidan Gillen": {
       "array": [

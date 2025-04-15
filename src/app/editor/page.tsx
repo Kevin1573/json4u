@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import MainPanel from "@/containers/editor/MainPanel";
 import SideNav from "@/containers/editor/sidenav";
-import { PricingOverlay } from "@/containers/pricing";
+// import { PricingOverlay } from "@/containers/pricing";
 
 export default async function Page() {
   return (
@@ -11,7 +11,7 @@ export default async function Page() {
         <SideNav />
         <Separator orientation="vertical" />
         <MainPanel />
-        <PricingOverlay />
+        {/* <PricingOverlay /> */}
       </div>
     </TooltipProvider>
   );
